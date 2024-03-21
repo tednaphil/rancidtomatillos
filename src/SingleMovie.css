@@ -16,3 +16,10 @@ article {
     padding: 5px 10px;
     padding-bottom: 50px;
 }
+
+button {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    width: fit-content;
+}

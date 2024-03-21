@@ -21,15 +21,18 @@ function SingleMovie({selection}) {
     //data formatting functions for budget, revenue, runtime, and maybe rating
     //pass those returns to "stats" p element below
 
+    //function to reset selection on home button click
+
     return (
         <article className='single-movie' Style={`background-image:url(${movie.movie.backdrop_path})`}>
             {/* use an image component instead and place the section over it with a negative margin */}
-           <section className='details'>
-            <h2 className='movie-title-heading'>{selection}</h2>
-            <h3 className='tagline'>{movie.movie.tagline}</h3>
-            <p className='description'>{movie.movie.overview}</p>
-            <p className='stats'>{movie.movie.genres[0]} | Avg Rating: {movie.movie.average_rating}/10 | Runtime: {movie.movie.runtime} min |</p>
-           </section>
+            <button className='home-button'>Home</button>
+            <section className='details'>
+                <h2 className='movie-title-heading'>{selection}</h2>
+                <h3 className='tagline'>{movie.movie.tagline}</h3>
+                <p className='description'>{movie.movie.overview}</p>
+                <p className='stats'>{movie.movie.genres[0]} | Avg Rating: {movie.movie.average_rating}/10 | Runtime: {movie.movie.runtime} min |</p>
+            </section>
         </article>
     )
 }
