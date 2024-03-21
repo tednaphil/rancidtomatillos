@@ -1,6 +1,6 @@
 import './SingleMovie.css';
 
-function SingleMovie() {
+function SingleMovie({selection}) {
     const movie = {
         "movie": {
             id: 1,
@@ -25,7 +25,7 @@ function SingleMovie() {
         <article className='single-movie' Style={`background-image:url(${movie.movie.backdrop_path})`}>
             {/* use an image component instead and place the section over it with a negative margin */}
            <section className='details'>
-            <h2 className='movie-title-heading'>{movie.movie.title}</h2>
+            <h2 className='movie-title-heading'>{selection}</h2>
             <h3 className='tagline'>{movie.movie.tagline}</h3>
             <p className='description'>{movie.movie.overview}</p>
             <p className='stats'>{movie.movie.genres[0]} | Avg Rating: {movie.movie.average_rating}/10 | Runtime: {movie.movie.runtime} min |</p>
