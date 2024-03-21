@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import './Movies.css';
 import Card from './Card';
 
-function Movies({movies}) {
+function Movies({ movies }) {
     const movieCards = 
     movies.movies.map(movie => {
         return (
@@ -11,6 +12,7 @@ function Movies({movies}) {
                 poster={movie.poster_path}
                 id={movie.id}
                 key={movie.id}
+                // displayMovie={displayMovie}
             />
         )
     });

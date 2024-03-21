@@ -5,6 +5,9 @@ import Movies from './Movies';
 
 function App() {
   const [movies, setMovies] = useState(moviesData);
+  // function displayMovie(id) {
+
+  // }
   
   return (
     <main className='main'>
