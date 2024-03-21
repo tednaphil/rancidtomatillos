@@ -1,6 +1,6 @@
 import './SingleMovie.css';
 
-function SingleMovie({selection}) {
+function SingleMovie({selection, setSelection}) {
     const movie = {
         "movie": {
             id: 1,
@@ -26,7 +26,7 @@ function SingleMovie({selection}) {
     return (
         <article className='single-movie' Style={`background-image:url(${movie.movie.backdrop_path})`}>
             {/* use an image component instead and place the section over it with a negative margin */}
-            <button className='home-button'>Home</button>
+            <button className='home-button' onClick={() => setSelection('') }>Home</button>
             <section className='details'>
                 <h2 className='movie-title-heading'>{selection}</h2>
                 <h3 className='tagline'>{movie.movie.tagline}</h3>
