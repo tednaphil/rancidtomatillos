@@ -6,10 +6,12 @@ import Card from './Card';
 
 function App() {
   const [movies, setMovies] = useState(moviesData);
+  
 
   return (
     <main className='main'>
       <h1>Rancid Tomatillos</h1>
+      <Movies movies={movies}/>
     </main>
     
   );

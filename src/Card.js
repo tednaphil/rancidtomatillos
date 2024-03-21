@@ -1,6 +1,11 @@
 import './Card.css';
 
-function Card() {
+function Card({ title, id, poster, avgRating}) {
+    return (
+        <div id={id}>
+            <img src={poster} alt={title}/>
+        </div>
+    )
 
 }
 
