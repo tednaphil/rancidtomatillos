@@ -20,7 +20,10 @@ function SingleMovie() {
 
     return (
         <article className='single-movie' Style={`background-image:url(${movie.movie.backdrop_path})`}>
-            <h2>{movie.movie.title}</h2>
+           <section className='details'>
+            <h2 className='movie-title-heading'>{movie.movie.title}</h2>
+            <p className='description'>{movie.movie.overview}</p>
+           </section>
         </article>
     )
 }
