@@ -12,7 +12,6 @@ function Movies({ movies }) {
                 poster={movie.poster_path}
                 id={movie.id}
                 key={movie.id}
-                // displayMovie={displayMovie}
             />
         )
     });
