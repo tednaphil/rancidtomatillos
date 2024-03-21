@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import './SingleMovie.css';
 
 function SingleMovie({selection, setSelection}) {
-    const movie = {
+    const dummyMovie = {
         "movie": {
             id: 1,
             title: "Fake Movie Title",
@@ -18,10 +19,12 @@ function SingleMovie({selection, setSelection}) {
         }
     }
 
+    const [movie, setMovie] = useState(dummyMovie)
+
+
+
     //data formatting functions for budget, revenue, runtime, and maybe rating
     //pass those returns to "stats" p element below
-
-    //function to reset selection on home button click
 
     return (
         <article className='single-movie' Style={`background-image:url(${movie.movie.backdrop_path})`}>
