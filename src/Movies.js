@@ -3,7 +3,6 @@ import Card from './Card';
 
 function Movies({movies}) {
     const movieCards = 
-    // console.log(movies)
     movies.movies.map(movie => {
         return (
             <Card
@@ -14,15 +13,13 @@ function Movies({movies}) {
                 key={movie.id}
             />
         )
-    })//map through movies to create cards
-
+    });
 
     return (
         <section className='movies'>
             {movieCards}
         </section>
-    )
-
-}
+    );
+};
 
 export default Movies
