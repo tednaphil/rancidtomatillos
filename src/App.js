@@ -10,7 +10,7 @@ function App() {
   const [error, setError] = useState('');
 
   function fetchMovies() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movie')
       .then(response => {
         if(!response.ok) {
           throw new Error('There was an error getting the information')
@@ -33,11 +33,11 @@ function App() {
   return (
     <main className='main'>
       <h1 className='heading'>Rancid Tomatillos</h1>
-      { error && <h2 className='heading'>{error}</h2> }
+      { error && <h2 className='error'>{error}</h2> }
       { !selection ? 
       <>
         <h2 className='heading2'>Top Movies Now...</h2>
-        <Movies movies={movies} setSelection={setSelection} displayMovie={displayMovie}/>
+        <Movies movies={movies} setSelection={setSelection} displayMovie={displayMovie} setError={setError}/>
       </>
       :
       <SingleMovie selection={selection} setSelection={setSelection} /> }

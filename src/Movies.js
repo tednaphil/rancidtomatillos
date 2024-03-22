@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Movies.css';
 import Card from './Card';
 
-function Movies({ movies, setSelection, displayMovie }) {
+function Movies({ movies, setSelection, displayMovie, setError }) {
     const movieCards = 
     movies.map(movie => {
         return (
@@ -15,6 +15,7 @@ function Movies({ movies, setSelection, displayMovie }) {
                 key={movie.id}
                 setSelection={setSelection}
                 displayMovie={displayMovie}
+                setError={setError}
             />
         )
     });
