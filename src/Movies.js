@@ -9,6 +9,7 @@ function Movies({ movies, setSelection, displayMovie }) {
             <Card
                 title={movie.title}
                 avgRating={movie.average_rating}
+                releaseDate={movie.release_date}
                 poster={movie.poster_path}
                 id={movie.id}
                 key={movie.id}

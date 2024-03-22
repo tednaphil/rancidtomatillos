@@ -6,4 +6,22 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: #220901;
+}
+
+.main {
+  text-align: center;
+  font-family: 'Special Elite', sans-serif;
+}
+
+.heading, .heading2 {
+  text-align: left;
+  padding-left: 30px;
+  font-size: 3em;
+  margin-bottom: 5px;
+  color: #FFFDF8;
+}
+
+.heading2 {
+  font-size: 2em;
 }
