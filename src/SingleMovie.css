@@ -23,4 +23,7 @@ button {
     top: 40px;
     right: 10px;
     width: fit-content;
+    &:hover {
+        cursor: pointer;
+    }
 }
