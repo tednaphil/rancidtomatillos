@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Card.css';
 
 function Card({ title, id, poster, avgRating, setSelection, displayMovie, releaseDate }) {
-    const [clicked, setClicked] = useState('');
+    // const [clicked, setClicked] = useState('');
 
     function handleClick(id) {
         // setClicked('clicked');
