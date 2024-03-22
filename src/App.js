@@ -9,6 +9,7 @@ function App() {
   return (
     <main className='main'>
       <h1 className='heading'>Rancid Tomatillos</h1>
+      <h2 className='heading2'>Top Movies Now...</h2>
       <Movies movies={movies}/>
     </main>
     
