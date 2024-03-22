@@ -1,23 +1,14 @@
 article {
-    /* height: 100vh; */
-    /* width: 100vw; */
-    /* background-repeat:no-repeat; */
     width: min-content;
     margin: 0 auto;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: flex-end; */
     text-align: left;
 }
-
-
 
 .details {
     background-color: hsla(89, 0%, 50%, 0.48);
     backdrop-filter: blur(10px);
     color: white;
     max-width: 100%;
-    /* min-width: 800px; */
     margin-top: -234px;
     padding: 5px 10px;
     padding-bottom: 50px;
@@ -33,7 +24,7 @@ button {
     top: 40px;
     right: 40px;
     width: fit-content;
-    font-size: 1.2em;
+    font-size: 2.5em;
     color: white;
     background: none;
     border: none;

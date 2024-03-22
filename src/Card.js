@@ -2,16 +2,14 @@ import { useState } from 'react';
 import './Card.css';
 
 function Card({ title, id, poster, avgRating, setSelection, displayMovie, releaseDate }) {
-    // const [clicked, setClicked] = useState('');
 
     function handleClick(id) {
-        // setClicked('clicked');
         setSelection(title);
         displayMovie(id)
     }
 
     return (
-        <div className='movie-card' id={id} /*clicked={clicked}*/ onClick={() => handleClick(id)}>
+        <div className='movie-card' id={id} onClick={() => handleClick(id)}>
             <img className='poster' src={poster} alt={`${title} movie poster`}/>
             <aside className='popup'>
                 <h2 className='movie-info'>Title: {title}</h2>
