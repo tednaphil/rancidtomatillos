@@ -1,0 +1,35 @@
+article {
+    width: min-content;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.details {
+    background-color: hsla(89, 0%, 50%, 0.48);
+    backdrop-filter: blur(10px);
+    color: white;
+    max-width: 100%;
+    margin-top: -234px;
+    padding: 5px 10px;
+    padding-bottom: 50px;
+}
+
+.movie-backdrop {
+    width: 90vw;
+    padding-top: 20px;
+}
+
+button {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: fit-content;
+    font-size: 2.5em;
+    color: white;
+    background: none;
+    border: none;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.3);
+    }
+}
