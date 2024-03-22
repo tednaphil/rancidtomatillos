@@ -27,9 +27,10 @@ function SingleMovie({selection, setSelection}) {
     //pass those returns to "stats" p element below
 
     return (
-        <article className='single-movie' Style={`background-image:url(${movie.movie.backdrop_path})`}>
+        <article className='single-movie'>
             {/* use an image component instead and place the section over it with a negative margin */}
             <button className='home-button' onClick={() => setSelection('') }>Home</button>
+            <img className='movie-backdrop' src={movie.movie.backdrop_path} alt={`${selection} movie poster`}/>
             <section className='details'>
                 <h2 className='movie-title-heading'>{selection}</h2>
                 <h3 className='tagline'>{movie.movie.tagline}</h3>
