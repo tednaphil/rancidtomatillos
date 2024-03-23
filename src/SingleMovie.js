@@ -1,11 +1,6 @@
-import { useState } from 'react';
 import './SingleMovie.css';
 
 function SingleMovie({selection, setSelection}) {
-
-
-    //data formatting functions for genres, budget, revenue, runtime, and maybe rating
-    //pass those returns to "stats" p element below
 
     return (
         <article className='single-movie'>
