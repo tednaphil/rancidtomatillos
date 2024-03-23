@@ -7,7 +7,7 @@ function SingleMovie({selection, setSelection}) {
             <button className='home-button' onClick={() => setSelection('') }>&#x2716;</button>
             <img className='movie-backdrop' src={selection.backdrop_path} alt={`${selection.title} movie poster`}/>
             <section className='details'>
-                <h2 className='movie-title-heading'>{selection.title}</h2>
+                <h2 className='movie-title-heading'>{selection.title} {`(${selection.releaseDate})`}</h2>
                 <h3 className='tagline'>{selection.tagline}</h3>
                 <p className='description'>{selection.overview}</p>
                 <p className='stats'><b>Genres:</b> {selection.genres} | <b>Avg Rating:</b> {selection.average_rating}/10 
