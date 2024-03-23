@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Card.css';
 
 function Card({ title, id, poster, avgRating, setSelection, releaseDate, setError }) {
@@ -26,6 +27,7 @@ function Card({ title, id, poster, avgRating, setSelection, releaseDate, setErro
         movie.budget = movie.budget.toLocaleString();
         movie.revenue = movie.revenue.toLocaleString();
         movie.genres = movie.genres.join(', ');
+        movie.releaseDate = releaseDate.split('-')[0];
 
         setSelection(movie);
     }
@@ -43,3 +45,13 @@ function Card({ title, id, poster, avgRating, setSelection, releaseDate, setErro
 };
 
 export default Card
+
+Card.propTypes = {
+    title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    poster: PropTypes.string.isRequired,
+    avgRating: PropTypes.number.isRequired,
+    setSelection: PropTypes.func.isRequired,
+    releaseDate: PropTypes.string.isRequired,
+    setError: PropTypes.func.isRequired
+}
