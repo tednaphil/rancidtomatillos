@@ -24,11 +24,6 @@ function App() {
     useEffect(() => {
       fetchMovies();
     }, []);
-
-  function displayMovie(id) {
-    console.log(`displayMovie ${id}`)
-  }
-
   
   return (
     <main className='main'>
@@ -37,7 +32,7 @@ function App() {
       { !selection ? 
       <>
         <h2 className='heading2'>Top Movies Now...</h2>
-        <Movies movies={movies} setSelection={setSelection} displayMovie={displayMovie} setError={setError}/>
+        <Movies movies={movies} setSelection={setSelection} setError={setError}/>
       </>
       :
       <SingleMovie selection={selection} setSelection={setSelection} /> }
