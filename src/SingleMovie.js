@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './SingleMovie.css';
 
 function SingleMovie({selection, setSelection}) {
@@ -18,3 +19,8 @@ function SingleMovie({selection, setSelection}) {
 }
 
 export default SingleMovie
+
+SingleMovie.propTypes = {
+    selection: PropTypes.object.isRequired,
+    setSelection: PropTypes.func.isRequired,
+}
