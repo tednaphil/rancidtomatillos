@@ -15,8 +15,20 @@ function Card({ title, id, poster, avgRating, setSelection, displayMovie, releas
                 }
                 return response.json()
             })
-            .then(data => setSelection(data))
+            .then(data => organizeSelection(data.movie))
             .catch(err => setError(err.message))
+    }
+
+    function organizeSelection(data) {
+        let movie = data;
+
+        movie.hours = Math.floor(movie.runtime / 60);
+        movie.minutes = movie.runtime % 60;
+        movie.budget = movie.budget.toLocaleString();
+        movie.revenue = movie.revenue.toLocaleString();
+        movie.genres = movie.genres.join(', ');
+
+        setSelection(movie);
     }
 
     return (
