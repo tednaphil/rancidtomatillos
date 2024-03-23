@@ -29,7 +29,7 @@ function Movies({ movies, setSelection, setError }) {
 export default Movies
 
 Movies.propTypes = {
-    movies: PropTypes.array,
-    setSelection: PropTypes.func,
-
+    movies: PropTypes.array.isRequired,
+    setSelection: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired,
 }
