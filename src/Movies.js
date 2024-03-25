@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Movies.css';
 import Card from './Card';
 
-function Movies({ movies, setSelection, displayMovie }) {
+function Movies({ movies, setSelection, setError }) {
     const movieCards = 
-    movies.movies.map(movie => {
+    movies.map(movie => {
         return (
             <Card
                 title={movie.title}
@@ -14,7 +14,7 @@ function Movies({ movies, setSelection, displayMovie }) {
                 id={movie.id}
                 key={movie.id}
                 setSelection={setSelection}
-                displayMovie={displayMovie}
+                setError={setError}
             />
         )
     });
@@ -27,3 +27,9 @@ function Movies({ movies, setSelection, displayMovie }) {
 };
 
 export default Movies
+
+Movies.propTypes = {
+    movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+    setSelection: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired,
+}

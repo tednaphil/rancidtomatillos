@@ -13,13 +13,17 @@ body {
   text-align: center;
 }
 
-.heading, .heading2 {
+.heading, .heading2, .error {
   text-align: left;
   padding-left: 30px;
   font-size: 3em;
   margin-bottom: 5px;
   color: #FFFDF8;
   font-family: 'Special Elite', sans-serif;
+}
+
+.error {
+  color: #F6AA1C;
 }
 
 .heading2 {

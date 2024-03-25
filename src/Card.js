@@ -1,11 +1,35 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Card.css';
 
-function Card({ title, id, poster, avgRating, setSelection, displayMovie, releaseDate }) {
+function Card({ title, id, poster, avgRating, setSelection, releaseDate, setError }) {
 
     function handleClick(id) {
-        setSelection(title);
-        displayMovie(id)
+        fetchSingleMovie(id);
+    }
+
+    function fetchSingleMovie(id) {
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('We couldn\'t find the movie, please check back later.')
+                }
+                return response.json()
+            })
+            .then(data => organizeSelection(data.movie))
+            .catch(err => setError(err.message))
+    }
+
+    function organizeSelection(data) {
+        let movie = data;
+
+        movie.hours = Math.floor(movie.runtime / 60);
+        movie.minutes = movie.runtime % 60;
+        movie.budget = movie.budget.toLocaleString();
+        movie.revenue = movie.revenue.toLocaleString();
+        movie.genres = movie.genres.join(', ');
+        movie.releaseDate = releaseDate.split('-')[0];
+
+        setSelection(movie);
     }
 
     return (
@@ -21,3 +45,13 @@ function Card({ title, id, poster, avgRating, setSelection, displayMovie, releas
 };
 
 export default Card
+
+Card.propTypes = {
+    title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    poster: PropTypes.string.isRequired,
+    avgRating: PropTypes.number.isRequired,
+    setSelection: PropTypes.func.isRequired,
+    releaseDate: PropTypes.string.isRequired,
+    setError: PropTypes.func.isRequired
+}
