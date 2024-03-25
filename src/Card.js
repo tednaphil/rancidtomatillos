@@ -36,7 +36,7 @@ function Card({ title, id, poster, avgRating, setSelection, releaseDate, setErro
         <div className='movie-card' id={id} onClick={() => handleClick(id)}>
             <img className='poster' src={poster} alt={`${title} movie poster`}/>
             <aside className='popup'>
-                <h2 className='movie-info'>Title: {title}</h2>
+                <h2 className='movie-info movie-title'>{title}</h2>
                 <p className='movie-info'>Avg Rating: {Math.round(avgRating * 10) / 10}</p>
                 <p className='movie-info'>Release Date: {releaseDate}</p>
             </aside>

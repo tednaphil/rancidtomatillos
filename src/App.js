@@ -16,8 +16,18 @@ function App() {
         }
         return response.json()
       })
-      .then(data => setMovies(data.movies))
+      .then(data => organizeMovieData(data.movies))
       .catch(err => setError(err.message))
+  }
+
+  function organizeMovieData(movies) {
+    movies.forEach((movie) => {
+      let movieYear = movie.release_date.slice(0, 4)
+      let movieMonth = movie.release_date.slice(5, 7)
+      let movieDay = movie.release_date.slice(8,10)
+      movie.release_date = movieMonth + '/' + movieDay + '/' + movieYear
+    })
+    setMovies(movies)
   }
 
     useEffect(() => {
