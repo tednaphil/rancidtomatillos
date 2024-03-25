@@ -27,8 +27,8 @@ function Card({ title, id, poster, avgRating, setSelection, releaseDate, setErro
         movie.budget = movie.budget.toLocaleString();
         movie.revenue = movie.revenue.toLocaleString();
         movie.genres = movie.genres.join(', ');
-        movie.releaseDate = releaseDate.split('-')[0];
-
+        movie.releaseDate = releaseDate;
+        console.log({movie})
         setSelection(movie);
     }
 
