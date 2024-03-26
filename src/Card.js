@@ -33,14 +33,18 @@ function Card({ title, id, poster, avgRating, setSelection, releaseDate, setErro
     }
 
     return (
-        <div className='movie-card' id={id} tabIndex='0' onClick={() => handleClick(id)} /*onKeyDown={() => handleClick(id)}*/>
+        <section className='movie-card' id={id} tabIndex='0' onClick={() => handleClick(id)} onKeyDown={(e) => {
+            if (e.keyCode === 32 || e.keyCode === 13) {
+                handleClick(id)
+            }
+        }}>
             <img className='poster' src={poster} alt={`${title} movie poster`}/>
             <aside className='popup'>
                 <h2 className='movie-info movie-title'>{title}</h2>
                 <p className='movie-info'>Avg Rating: {Math.round(avgRating * 10) / 10}</p>
                 <p className='movie-info'>Release Date: {releaseDate}</p>
             </aside>
-        </div>
+        </section>
     );
 };
 
