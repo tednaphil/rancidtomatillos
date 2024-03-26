@@ -23,7 +23,8 @@
     margin: none;
 }
 
-.movie-card:hover .popup {
+.movie-card:hover .popup,
+:focus .popup {
     visibility: visible;
     opacity: 1;
 }
