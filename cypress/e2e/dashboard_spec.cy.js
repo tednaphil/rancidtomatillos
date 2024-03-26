@@ -18,7 +18,7 @@ describe('Rancid Tomatillos', () => {
     .get('aside').last().contains('The Minute You Wake Up Dead')
   })
 
-  it('Should show one move upon click', () => {
+  it('Should show one movie upon click', () => {
     cy.get('.movie-card').first().click()
     .get('h2').contains('Black Adam (10/19/2022)')
     .get('h3').contains('The world needed a hero. It got Black Adam.')
