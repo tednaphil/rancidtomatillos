@@ -18,13 +18,11 @@ describe('Rancid Tomatillos', () => {
     .get('aside').last().contains('The Minute You Wake Up Dead')
   })
 
-  it('Should have detail previews hidden', () => {
-    cy.get('.popup').should('be.hidden')
-  })
-
-  it('Should show movie detail preview on hover', () => {
-    cy.get('.movie-card').first().realHover()
-    .get('.popup').first().contains('Black Adam')
+  it('Should show an error message if data retrieval unsuccesful', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500,
+    })
+    .get('.error').contains('There was an issue getting the information... check back later.')
   })
 
   it('Should show one movie upon click', () => {
@@ -41,10 +39,9 @@ describe('Rancid Tomatillos', () => {
     .get('.heading2').contains('Top Movies Now...')
   })
 
-  it('Should show an error message if data retrieval unsuccesful', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 500,
-    })
-    .get('.error').contains('There was an issue getting the information... check back later.')
+  it('Should reveal movie detail preview on hover', () => {
+    cy.get('.popup').should('be.hidden')
+    .get('.movie-card').first().realHover()
+    .get('.popup').first().contains('Black Adam')
   })
 })
