@@ -22,6 +22,11 @@ describe('Rancid Tomatillos', () => {
     cy.get('.popup').should('be.hidden')
   })
 
+  it('Should show movie detail preview on hover', () => {
+    cy.get('.movie-card').first().realHover()
+    .get('.popup').first().contains('Black Adam')
+  })
+
   it('Should show one movie upon click', () => {
     cy.get('.movie-card').first().click()
     .get('h2').contains('Black Adam (10/19/2022)')
