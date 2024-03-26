@@ -27,7 +27,7 @@ describe('Rancid Tomatillos', () => {
 
   it('Should show one movie upon click', () => {
     cy.get('.movie-card').first().click()
-    .get('h2').contains('Black Adam (10/19/2022)')
+    .get('h2').contains('Black Adam (2022)')
     .get('h3').contains('The world needed a hero. It got Black Adam.')
     .get('.description').contains('Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.')
   })
