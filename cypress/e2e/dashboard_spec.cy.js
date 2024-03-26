@@ -31,4 +31,11 @@ describe('Rancid Tomatillos', () => {
     .get('.movies').find('.movie-card').should('have.length', 5)
     .get('.heading2').contains('Top Movies Now...')
   })
+
+  it('Should show an error message if data retrieval unsuccesful', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500,
+    })
+    .get('.error').contains('There was an issue getting the information... check back later.')
+  })
 })
