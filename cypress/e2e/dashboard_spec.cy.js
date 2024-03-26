@@ -18,6 +18,10 @@ describe('Rancid Tomatillos', () => {
     .get('aside').last().contains('The Minute You Wake Up Dead')
   })
 
+  it('Should have detail previews hidden', () => {
+    cy.get('.popup').should('be.hidden')
+  })
+
   it('Should show one movie upon click', () => {
     cy.get('.movie-card').first().click()
     .get('h2').contains('Black Adam (10/19/2022)')
