@@ -33,10 +33,10 @@ describe('Rancid Tomatillos', () => {
   })
 
   it('Should should show an error message if data retrival of a single movie is unsuccesful', () => {
-    cy.visit('http://localhost:3000/movie/436270')
-    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
       statusCode: 500,
     })
+    .visit('http://localhost:3000/movie/436270')
     .get('h2').contains('We couldn\'t find the movie, please check back later.')
   })
 
