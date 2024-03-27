@@ -7,9 +7,11 @@ function SingleMovie({setError}) {
     // console.log(useParams())
     const [selection, setSelection] = useState('');
     // const [error, setError] = useState('')
-    const movieId = useParams().movieId
+    const movieId = useParams().movieId;
+    // console.log(movieId)
 
     function fetchSingleMovie(id) {
+        // console.log(id)
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
             .then(response => {
                 if(!response.ok) {
@@ -21,7 +23,10 @@ function SingleMovie({setError}) {
             .catch(err => setError(err.message))
     }
 
-    useEffect((movieId) => fetchSingleMovie(movieId), [])
+    useEffect(() => {
+        console.log('useEffect', movieId)
+        fetchSingleMovie(movieId)
+    }, [])
 
     function organizeSelection(data) {
         let movie = data;
