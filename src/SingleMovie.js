@@ -16,7 +16,7 @@ function SingleMovie() {
                 }
                 return response.json()
             })
-            .then(data => organizeSelection(data.movie))
+            .then(data => organizeSelection(data))
             .catch(err => setError(err.message))
     }
 
@@ -24,9 +24,7 @@ function SingleMovie() {
         fetchSingleMovie(movieId)
     }, [])
 
-    function organizeSelection(data) {
-        let movie = data;
-
+    function organizeSelection({movie}) {
         movie.hours = Math.floor(movie.runtime / 60);
         movie.minutes = movie.runtime % 60;
         movie.budget = movie.budget.toLocaleString();
