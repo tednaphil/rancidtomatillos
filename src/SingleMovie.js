@@ -1,17 +1,13 @@
 import PropTypes from 'prop-types';
 import './SingleMovie.css';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function SingleMovie({setError}) {
-    // console.log(useParams())
     const [selection, setSelection] = useState('');
-    // const [error, setError] = useState('')
     const movieId = useParams().movieId;
-    // console.log(movieId)
 
     function fetchSingleMovie(id) {
-        // console.log(id)
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
             .then(response => {
                 if(!response.ok) {
@@ -36,17 +32,17 @@ function SingleMovie({setError}) {
         movie.budget = movie.budget.toLocaleString();
         movie.revenue = movie.revenue.toLocaleString();
         movie.genres = movie.genres.join(', ');
-        // movie.releaseDate = releaseDate;
+        movie.release_date = movie.release_date.slice(0, 4);
+
         setSelection(movie);
     }
-    // const releaseYear = selection.releaseDate.split('/')[2]
 
     return (
         <article className='single-movie'>
-            <button className='home-button' onClick={() => setSelection('') }>&#x2716;</button>
+            <Link to='/' className='home-button'>&#x2716;</Link>
             <img className='movie-backdrop' src={selection.backdrop_path} alt={`${selection.title} movie poster`}/>
             <section className='details'>
-                <h2 className='movie-title-heading'>{selection.title}</h2>
+                <h2 className='movie-title-heading'>{selection.title} {`(${selection.release_date})`}</h2>
                 <h3 className='tagline'>{selection.tagline}</h3>
                 <p className='description'>{selection.overview}</p>
                 <p className='stats'><b>Genres:</b> {selection.genres} | <b>Avg Rating:</b> {selection.average_rating}/10 

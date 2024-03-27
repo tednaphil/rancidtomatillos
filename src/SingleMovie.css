@@ -19,7 +19,7 @@ article {
     padding-top: 20px;
 }
 
-button {
+.home-button {
     position: absolute;
     top: 40px;
     right: 40px;
@@ -28,6 +28,7 @@ button {
     color: #FFFDF8;
     background: none;
     border: none;
+    text-decoration: none;
     &:hover {
         cursor: pointer;
         transform: scale(1.3);

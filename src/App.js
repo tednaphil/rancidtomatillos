@@ -6,7 +6,6 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [movies, setMovies] = useState([]);
-  // const [selection, setSelection] = useState('');
   const [error, setError] = useState('');
 
   function fetchMovies() {
@@ -43,13 +42,6 @@ function App() {
         <Route path='/' element={<Movies movies={movies} setError={setError}/>}></Route>
         <Route path='/:movieId' element={<SingleMovie setError={setError}/>}></Route>
       </Routes>
-      {/* { !selection ? 
-      <>
-        </BrowserRouter>
-        <Movies movies={movies} setSelection={setSelection} setError={setError}/>
-      </>
-      :
-      <SingleMovie selection={selection} setSelection={setSelection} /> } */}
     </main>
     
   );
