@@ -3,8 +3,9 @@ import './SingleMovie.css';
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-function SingleMovie({setError}) {
+function SingleMovie() {
     const [selection, setSelection] = useState('');
+    const [error, setError] = useState('');
     const movieId = useParams().movieId;
 
     function fetchSingleMovie(id) {
@@ -20,7 +21,6 @@ function SingleMovie({setError}) {
     }
 
     useEffect(() => {
-        console.log('useEffect', movieId)
         fetchSingleMovie(movieId)
     }, [])
 
@@ -55,5 +55,5 @@ function SingleMovie({setError}) {
 export default SingleMovie
 
 SingleMovie.propTypes = {
-    setError: PropTypes.func.isRequired,
+
 }

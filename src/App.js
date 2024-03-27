@@ -40,7 +40,7 @@ function App() {
       { error && <h2 className='error'>{error}</h2> }
       <Routes>
         <Route path='/' element={<Movies movies={movies} setError={setError}/>}></Route>
-        <Route path='/:movieId' element={<SingleMovie setError={setError}/>}></Route>
+        <Route path='/:movieId' element={<SingleMovie />}></Route>
       </Routes>
     </main>
     
