@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Card({ title, id, poster, avgRating, releaseDate }) {
 
     return (
-        <Link to={`/${id}`} className='movie-card' id={id}>
+        <Link to={`movie/${id}`} className='movie-card' id={id}>
             <img className='poster' src={poster} alt={`${title} movie poster`}/>
             <aside className='popup'>
                 <h2 className='movie-info movie-title'>{title}</h2>
