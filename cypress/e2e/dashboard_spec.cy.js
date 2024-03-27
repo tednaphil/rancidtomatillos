@@ -32,6 +32,14 @@ describe('Rancid Tomatillos', () => {
     .url().should('eq', 'http://localhost:3000/')
   })
 
+  it('Should should show an error message if data retrival of a single movie is unsuccesful', () => {
+    cy.visit('http://localhost:3000/movie/436270')
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+      statusCode: 500,
+    })
+    .get('h2').contains('We couldn\'t find the movie, please check back later.')
+  })
+
   it('Should show one movie upon click', () => {
     cy.get('.movie-card').first().click()
     .url().should('include', '/436270')
