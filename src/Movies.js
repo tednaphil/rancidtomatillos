@@ -20,9 +20,12 @@ function Movies({ movies, setSelection, setError }) {
     });
 
     return (
-        <section className='movies'>
-            {movieCards}
-        </section>
+        <>
+            <h2 className='heading2'>Top Movies Now...</h2>
+            <section className='movies'>
+                {movieCards}
+            </section>
+        </>
     );
 };
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Movies from './Movies';
 import SingleMovie from './SingleMovie';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -38,13 +39,16 @@ function App() {
     <main className='main'>
       <h1 className='heading'>Rancid Tomatillos</h1>
       { error && <h2 className='error'>{error}</h2> }
-      { !selection ? 
+      <Routes>
+        <Route path='/' element={<Movies movies={movies} setSelection={setSelection} setError={setError}/>}></Route>
+      </Routes>
+      {/* { !selection ? 
       <>
-        <h2 className='heading2'>Top Movies Now...</h2>
+        </BrowserRouter>
         <Movies movies={movies} setSelection={setSelection} setError={setError}/>
       </>
       :
-      <SingleMovie selection={selection} setSelection={setSelection} /> }
+      <SingleMovie selection={selection} setSelection={setSelection} /> } */}
     </main>
     
   );
