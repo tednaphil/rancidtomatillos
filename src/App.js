@@ -41,7 +41,7 @@ function App() {
       { error && <h2 className='error'>{error}</h2> }
       <Routes>
         <Route path='/' element={<Movies movies={movies} setError={setError}/>}></Route>
-        <Route path='/:movieId' element={<SingleMovie setError={setError}/>}></Route>
+        <Route path='movie/:movieId' element={<SingleMovie setError={setError}/>}></Route>
         <Route path='*' element={<BadUrl />}></Route>
       </Routes>
     </main>
