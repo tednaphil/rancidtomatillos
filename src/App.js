@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [selection, setSelection] = useState('');
+  // const [selection, setSelection] = useState('');
   const [error, setError] = useState('');
 
   function fetchMovies() {
@@ -40,7 +40,8 @@ function App() {
       <h1 className='heading'>Rancid Tomatillos</h1>
       { error && <h2 className='error'>{error}</h2> }
       <Routes>
-        <Route path='/' element={<Movies movies={movies} setSelection={setSelection} setError={setError}/>}></Route>
+        <Route path='/' element={<Movies movies={movies} setError={setError}/>}></Route>
+        <Route path='/:movieId' element={<SingleMovie setError={setError}/>}></Route>
       </Routes>
       {/* { !selection ? 
       <>
