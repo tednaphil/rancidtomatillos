@@ -27,20 +27,24 @@ function Card({ title, id, poster, avgRating, setSelection, releaseDate, setErro
         movie.budget = movie.budget.toLocaleString();
         movie.revenue = movie.revenue.toLocaleString();
         movie.genres = movie.genres.join(', ');
-        movie.releaseDate = releaseDate.split('-')[0];
-
+        movie.releaseDate = releaseDate;
+        // console.log({movie})
         setSelection(movie);
     }
 
     return (
-        <div className='movie-card' id={id} onClick={() => handleClick(id)}>
+        <section className='movie-card' id={id} tabIndex='0' onClick={() => handleClick(id)} onKeyDown={(e) => {
+            if (e.keyCode === 32 || e.keyCode === 13) {
+                handleClick(id)
+            }
+        }}>
             <img className='poster' src={poster} alt={`${title} movie poster`}/>
             <aside className='popup'>
-                <h2 className='movie-info'>Title: {title}</h2>
+                <h2 className='movie-info movie-title'>{title}</h2>
                 <p className='movie-info'>Avg Rating: {Math.round(avgRating * 10) / 10}</p>
                 <p className='movie-info'>Release Date: {releaseDate}</p>
             </aside>
-        </div>
+        </section>
     );
 };
 
