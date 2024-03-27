@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './Movies.css';
 import Card from './Card';
 
-function Movies({ movies, setSelection, setError }) {
+function Movies({ movies, setError }) {
     const movieCards = 
     movies.map(movie => {
         return (
@@ -13,16 +13,18 @@ function Movies({ movies, setSelection, setError }) {
                 poster={movie.poster_path}
                 id={movie.id}
                 key={movie.id}
-                setSelection={setSelection}
                 setError={setError}
             />
         )
     });
 
     return (
-        <section className='movies'>
-            {movieCards}
-        </section>
+        <>
+            <h2 className='heading2'>Top Movies Now...</h2>
+            <section className='movies'>
+                {movieCards}
+            </section>
+        </>
     );
 };
 
@@ -30,6 +32,5 @@ export default Movies
 
 Movies.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.object).isRequired,
-    setSelection: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired,
 }

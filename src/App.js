@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Movies from './Movies';
 import SingleMovie from './SingleMovie';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [selection, setSelection] = useState('');
   const [error, setError] = useState('');
 
   function fetchMovies() {
@@ -38,13 +38,10 @@ function App() {
     <main className='main'>
       <h1 className='heading'>Rancid Tomatillos</h1>
       { error && <h2 className='error'>{error}</h2> }
-      { !selection ? 
-      <>
-        <h2 className='heading2'>Top Movies Now...</h2>
-        <Movies movies={movies} setSelection={setSelection} setError={setError}/>
-      </>
-      :
-      <SingleMovie selection={selection} setSelection={setSelection} /> }
+      <Routes>
+        <Route path='/' element={<Movies movies={movies} setError={setError}/>}></Route>
+        <Route path='/:movieId' element={<SingleMovie setError={setError}/>}></Route>
+      </Routes>
     </main>
     
   );
