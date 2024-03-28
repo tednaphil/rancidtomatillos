@@ -8,7 +8,7 @@ describe('Rancid Tomatillos', () => {
       statusCode: 200,
       fixture: 'single_movie'
     })
-    .visit('http://localhost:3000')
+    .visit('http://localhost:3000/')
   })
 
   it('Should show movies upon load', () => {
@@ -25,6 +25,21 @@ describe('Rancid Tomatillos', () => {
     .get('.error').contains('There was an issue getting the information... check back later.')
   })
 
+  it('Should show an error page if user navigates to a non-existent path', () => {
+    cy.visit('http://localhost:3000/badsillypath')
+    .get('h2').contains('Page Not Found')
+    .get('a').click()
+    .url().should('eq', 'http://localhost:3000/')
+  })
+
+  it('Should should show an error message if data retrival of a single movie is unsuccesful', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+      statusCode: 500,
+    })
+    .visit('http://localhost:3000/movie/436270')
+    .get('h2').contains('We couldn\'t find the movie, please check back later.')
+  })
+
   it('Should show one movie upon click', () => {
     cy.get('.movie-card').first().click()
     .url().should('include', '/436270')
@@ -32,6 +47,7 @@ describe('Rancid Tomatillos', () => {
     .get('h3').contains('The world needed a hero. It got Black Adam.')
     .get('.description').contains('Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.')
   })
+
 
   it('Should take us back to the homepage', () => {
     cy.get('.movie-card').first().click()
