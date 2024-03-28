@@ -29,3 +29,12 @@ body {
 .heading2 {
   font-size: 2em;
 }
+
+/* @media screen and (max-width: 1024px) {
+  .heading, .error {
+    font-size: 2em;
+  }
+  .heading2 {
+    font-size: 1em;
+  }
+} */
