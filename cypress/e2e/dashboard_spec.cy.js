@@ -8,7 +8,7 @@ describe('Rancid Tomatillos', () => {
       statusCode: 200,
       fixture: 'single_movie'
     })
-    .visit('http://localhost:3000/')
+    .visit('http://localhost:3000/rancidtomatillos')
   })
 
   it('Should show movies upon load', () => {
@@ -26,17 +26,17 @@ describe('Rancid Tomatillos', () => {
   })
 
   it('Should show an error page if user navigates to a non-existent path', () => {
-    cy.visit('http://localhost:3000/badsillypath')
+    cy.visit('http://localhost:3000/rancidtomatillos/badsillypath')
     .get('h2').contains('Page Not Found')
     .get('a').click()
-    .url().should('eq', 'http://localhost:3000/')
+    .url().should('eq', 'http://localhost:3000/rancidtomatillos')
   })
 
   it('Should should show an error message if data retrival of a single movie is unsuccesful', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
       statusCode: 500,
     })
-    .visit('http://localhost:3000/movie/436270')
+    .visit('http://localhost:3000/rancidtomatillos/movie/436270')
     .get('h2').contains('We couldn\'t find the movie, please check back later.')
   })
 
@@ -52,7 +52,7 @@ describe('Rancid Tomatillos', () => {
   it('Should take us back to the homepage', () => {
     cy.get('.movie-card').first().click()
     .get('.home-button').click()
-    .url().should('eq', 'http://localhost:3000/')
+    .url().should('eq', 'http://localhost:3000/rancidtomatillos')
     .get('.movies').find('.movie-card').should('have.length', 5)
     .get('.heading2').contains('Top Movies Now...')
   })
