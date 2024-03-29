@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# <p align="center">🍿Rancid Tomatillos🎞️</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">Users can browse a selection of top movies and view their details!</p>
 
-## Available Scripts
+### <p align="center">Contributors</p>
+<div align="center">
+  
+  [Cory Sanders](https://github.com/corysanders3), [Tayla Phillips](https://github.com/tednaphil)
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## Preview:
+<div align="center">
+  <!-- <img src="" alt="app demo"> -->
+  <img style="width: 500px" src="https://github.com/corysanders3/rancidtomatillos/assets/76406423/62dc5988-8db1-457b-b2c8-fb4cc22db22e" alt="tablet view">
+  <img style="width:300px" src="https://github.com/corysanders3/rancidtomatillos/assets/76406423/cc964631-0ae6-4f10-8252-954bf6bb9c21"   alt="mobile view">
+</div>
+<p align="center">Technologies Used</p>
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge" alt="react badge">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge" alt="html badge">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=for-the-badge" alt="css badge">
+  <img src="https://img.shields.io/badge/Cypress-69D3A7?logo=cypress&logoColor=fff&style=for-the-badge" alt="cypress badge">
+  <img src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=fff&style=for-the-badge" alt="figma badge">
+  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=for-the-badge" alt="vscode badge">
+  <!-- other badges -->
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Instructions:
+- Visit the deployed [link](https://corysanders3.github.io/rancidtomatillos/)
+- OR run the following on command line to clone the repo and run the app locally:
+    ```
+    git clone git@github.com:corysanders3/rancidtomatillos.git
+    cd rancidtomatillos
+    npm install
+    npm start
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Run Tests
+<!--- Run the following on command line to install Cypress: `npm i -D cypress`
+- Add script to `package.json` file
+    ``` json
+    {
+      "scripts": {
+        "cypress": "cypress open"
+      }
+    }
+    ```
+    -->
+- Run the following on command line to open Cypress: `npm run cypress`
+- Click `E2E Testing`, then `Start E2E Testing` in desired browser
+- Select `dashboard_spec` to run all tests
+## Context:
+<!-- wins, challenges, time spent, goals, approaches etc -->
+- ~ 20 hours over a 7 day sprint to complete test suite, functionality, and refactors
+- Paired project completed in the second week of both contributors learning React, Router, and Cypress
+- Goals
+  ```
+  - Test React components & asynchronous JS
+  - Further develop refactoring skills
+  - Create a multi-page UX using Router
+  ```
+- Wins
+  ```
+  - Router implementation to improve navigation experience for users
+  - Succesful interception of network requests for testing
+  - Thorough typechecking with PropTypes
+  - Responsive design for tablet and mobile devices
+  ```
+- Next Steps
+  ```
+  - Search and filter features
+  - User login and rating system
+  ```
