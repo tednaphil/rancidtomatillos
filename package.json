@@ -14,12 +14,18 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "repository": {
+    "url": "git+https://github.com/corysanders3/rancidtomatillos.git"
+  },
+  "homepage": "http://corysanders3.github.io/rancidtomatillos",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^13.7.1"
+    "cypress": "^13.7.1",
+    "gh-pages": "^6.1.1"
   }
 }
