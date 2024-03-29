@@ -29,3 +29,13 @@ body {
 .heading2 {
   font-size: 2em;
 }
+
+@media screen and (max-width: 767px) {
+  .heading {
+    font-size: 2.5em;
+  }
+
+  .heading2 {
+    font-size: 1.5em;
+  }
+}

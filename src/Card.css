@@ -41,3 +41,32 @@
 .movie-title {
     font-size: 1.1vw;
 }
+
+@media screen and (max-width: 767px) {
+    .poster {
+        width: 70%;
+        border-radius: 20px;
+    }
+
+    .popup {
+        position: static;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: #FFFDF8;
+        padding: 1%;
+        width: 100%;
+        margin: none;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .movie-info {
+        margin: 1%;
+        font-size: 4vw;
+    }
+
+    .movie-card {
+        text-decoration: none;
+    }
+}
