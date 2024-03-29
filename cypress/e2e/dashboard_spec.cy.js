@@ -58,7 +58,8 @@ describe('Rancid Tomatillos', () => {
   })
 
   it('Should reveal movie detail preview on hover', () => {
-    cy.get('.popup').should('be.hidden')
+    cy.viewport(1025, 700)
+    .get('.popup').should('be.hidden')
     .get('.movie-card').first().realHover()
     .get('.popup').first().contains('Black Adam')
   })
