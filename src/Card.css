@@ -3,7 +3,7 @@
 }
 
 .poster {
-    width: 300px;
+    width: 88%;
     border-radius: 20px;
 }
 
@@ -13,13 +13,13 @@
     transition: opacity 1s;
     position: absolute;
     top: 70%;
-    left: 5%;
+    left: 6%;
     border: 3px solid #FFFDF8;
     border-radius: 8px;
     background-color: #621708;
     color: #FFFDF8;
-    padding: 10px;
-    width: 240px;
+    padding: 2%;
+    width: 70%;
     margin: none;
 }
 
@@ -34,9 +34,49 @@
 }
 
 .movie-info {
-    margin: 5px;
+    margin: 3%;
+    font-size: 1vw;
 }
 
 .movie-title{
-    font-size: 18px;
+    font-size: 1.1vw;
+}
+
+@media screen and (max-width: 1024px) {
+    .popup {
+        visibility: visible;
+        opacity: 1;
+        left: 15%;
+        border: 2px solid #FFFDF8;
+
+    }
+} 
+
+@media screen and (max-width: 767px) {
+    .poster {
+        width: 70%;
+        border-radius: 20px;
+    }
+
+    .popup {
+        position: static;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: #FFFDF8;
+        padding: 1%;
+        width: 100%;
+        margin: none;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .movie-info {
+        margin: 1%;
+        font-size: 4vw;
+    }
+
+    .movie-card {
+        text-decoration: none;
+    }
 }

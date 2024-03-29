@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './Movies.css';
 import Card from './Card';
 
-function Movies({ movies, setError }) {
+function Movies({ movies }) {
     const movieCards = 
     movies.map(movie => {
         return (
@@ -13,7 +13,6 @@ function Movies({ movies, setError }) {
                 poster={movie.poster_path}
                 id={movie.id}
                 key={movie.id}
-                setError={setError}
             />
         )
     });
@@ -32,5 +31,4 @@ export default Movies
 
 Movies.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.object).isRequired,
-    setError: PropTypes.func.isRequired,
 }
