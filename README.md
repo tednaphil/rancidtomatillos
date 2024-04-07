@@ -73,4 +73,3 @@
   - Search and filter features
   - User login and rating system
   ```
-# rancidtomatillos
