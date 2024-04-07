@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rancidtomatillos/static/css/main.202729e5.css",
+    "main.js": "/rancidtomatillos/static/js/main.cc9fe4ca.js",
+    "static/js/453.f4dc8b00.chunk.js": "/rancidtomatillos/static/js/453.f4dc8b00.chunk.js",
+    "index.html": "/rancidtomatillos/index.html",
+    "main.202729e5.css.map": "/rancidtomatillos/static/css/main.202729e5.css.map",
+    "main.cc9fe4ca.js.map": "/rancidtomatillos/static/js/main.cc9fe4ca.js.map",
+    "453.f4dc8b00.chunk.js.map": "/rancidtomatillos/static/js/453.f4dc8b00.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.202729e5.css",
+    "static/js/main.cc9fe4ca.js"
+  ]
+}
