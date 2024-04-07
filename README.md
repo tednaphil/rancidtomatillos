@@ -48,6 +48,7 @@
     }
     ```
     -->
+- Ensure you're running the app locally (see Installation Instructions above)
 - Run the following on command line to open Cypress: `npm run cypress`
 - Click `E2E Testing`, then `Start E2E Testing` in desired browser
 - Select `dashboard_spec` to run all tests
