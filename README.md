@@ -28,10 +28,10 @@
 </div>
 
 ## Installation Instructions:
-- Visit the deployed [link](https://corysanders3.github.io/rancidtomatillos/)
+- Visit the deployed [link](https://tednaphil.github.io/rancidtomatillos/)
 - OR run the following on command line to clone the repo and run the app locally:
     ```
-    git clone git@github.com:corysanders3/rancidtomatillos.git
+    git clone git@github.com:tednaphil/rancidtomatillos.git
     cd rancidtomatillos
     npm install
     npm start
@@ -39,7 +39,7 @@
 
 ### Run Tests
 <!--- Run the following on command line to install Cypress: `npm i -D cypress`
-- Add script to `package.json` file
+- Add script to `package.json` file if not already present
     ``` json
     {
       "scripts": {
