@@ -11,9 +11,9 @@
 
 ## Preview:
 <div align="center">
-  <!-- <img src="" alt="app demo"> -->
-  <img style="width: 500px" src="https://github.com/corysanders3/rancidtomatillos/assets/76406423/62dc5988-8db1-457b-b2c8-fb4cc22db22e" alt="tablet view">
-  <img style="width:300px" src="https://github.com/corysanders3/rancidtomatillos/assets/76406423/cc964631-0ae6-4f10-8252-954bf6bb9c21"   alt="mobile view">
+  <img src=".github/Rancid Demo.gif" alt="app demo">
+  <!-- <img style="width: 500px" src="https://github.com/corysanders3/rancidtomatillos/assets/76406423/62dc5988-8db1-457b-b2c8-fb4cc22db22e" alt="tablet view">
+  <img style="width:300px" src="https://github.com/corysanders3/rancidtomatillos/assets/76406423/cc964631-0ae6-4f10-8252-954bf6bb9c21"   alt="mobile view"> -->
 </div>
 <p align="center">Technologies Used</p>
 <div align="center">
