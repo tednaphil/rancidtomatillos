@@ -5,10 +5,31 @@ import SingleMovie from "./SingleMovie";
 import { Routes, Route } from "react-router-dom";
 import BadUrl from "./BadUrl";
 import { fetchMovies } from "./APICalls";
+import { QueryClient, QueryClientProvider, useQuery} from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Home />
+    </QueryClientProvider>
+  )
+}
+
+function Home() {
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState("");
+  const { isPending, error, data } = useQuery({
+    queryKey: ['repoData'],
+    queryFn: () =>
+      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies').then((res) =>
+        res.json().then((info) => organizeMovieData(info)),
+      ),
+  });
+
+  if (isPending) return 'Loading...'
+
+  if (error) return `There was an issue getting the information... check back later. ${error}`
 
   function organizeMovieData({ movies }) {
     const orgMovies = movies.map((movie) => {
@@ -20,18 +41,6 @@ function App() {
     });
     setMovies(orgMovies);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const movies = await fetchMovies();
-        organizeMovieData(movies);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-    fetchData();
-  }, []);
 
   return (
     <main className="main">
