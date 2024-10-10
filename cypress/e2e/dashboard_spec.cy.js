@@ -22,6 +22,7 @@ describe('Rancid Tomatillos', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 500,
     })
+    cy.wait(6000)
     .get('.error').contains('There was an issue getting the information... check back later.')
   })
 

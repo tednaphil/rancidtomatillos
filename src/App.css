@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  color: #FFFDF8;
 }
 
 html,
@@ -18,7 +19,6 @@ body {
   padding-left: 30px;
   font-size: 3em;
   margin-bottom: 5px;
-  color: #FFFDF8;
   font-family: 'Special Elite', sans-serif;
 }
 
