@@ -4,6 +4,7 @@ import Movies from './Movies';
 import SingleMovie from './SingleMovie';
 import { Routes, Route } from 'react-router-dom';
 import BadUrl from './BadUrl';
+import { fetchMovies } from './APICalls';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -32,8 +33,18 @@ function App() {
   }
 
     useEffect(() => {
-      fetchMovies();
+      const fetchData = async () => {
+        try {
+          const movies = await fetchMovies();
+          console.log(movies)
+          organizeMovieData(movies);
+        } catch(error) {
+          setError(error.message)
+        }
+      }
+      fetchData()
     }, []);
+
   
   return (
     <main className='main'>
