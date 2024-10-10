@@ -9,17 +9,17 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState('');
 
-  function fetchMovies() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if(!response.ok) {
-          throw new Error('There was an issue getting the information... check back later.')
-        }
-        return response.json()
-      })
-      .then(data => organizeMovieData(data.movies))
-      .catch(err => setError(err.message))
-  }
+  // function fetchMovies() {
+  //   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+  //     .then(response => {
+  //       if(!response.ok) {
+  //         throw new Error('There was an issue getting the information... check back later.')
+  //       }
+  //       return response.json()
+  //     })
+  //     .then(data => organizeMovieData(data.movies))
+  //     .catch(err => setError(err.message))
+  // }
 
   function organizeMovieData(movies) {
     movies.forEach((movie) => {
