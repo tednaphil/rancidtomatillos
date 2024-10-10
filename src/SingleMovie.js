@@ -8,20 +8,7 @@ function SingleMovie() {
     const [error, setError] = useState('');
     const movieId = useParams().movieId;
 
-    // function fetchSingleMovie(id) {
-    //     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    //         .then(response => {
-    //             if(!response.ok) {
-    //                 throw new Error('We couldn\'t find the movie, please check back later.')
-    //             }
-    //             return response.json()
-    //         })
-    //         .then(data => organizeSelection(data))
-    //         .catch(err => setError(err.message))
-    // }
-
     useEffect(() => {
-        // fetchSingleMovie(movieId)
         const fetchData = async () => {
             try {
                 const movie = await fetchSingleMovie(movieId);
@@ -31,7 +18,7 @@ function SingleMovie() {
             }
         }
         fetchData()
-    }, []);
+    }, [movieId]);
 
     function organizeSelection({movie}) {
         movie.hours = Math.floor(movie.runtime / 60);
