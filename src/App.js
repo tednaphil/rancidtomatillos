@@ -21,14 +21,14 @@ function Home() {
   const { isPending, error, data } = useQuery({
     queryKey: ['repoData'],
     queryFn: () =>
-      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies').then((res) =>
+      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movie').then((res) =>
         res.json().then((info) => organizeMovieData(info)),
       ),
   });
 
   if (isPending) return 'Loading...'
 
-  if (error) return `There was an issue getting the information... check back later. ${error}`
+  if (error) return <h2 className="error">{`There was an issue getting the information... check back later.`}</h2>
 
   function organizeMovieData({ movies }) {
     const orgMovies = movies.map((movie) => {
@@ -44,7 +44,6 @@ function Home() {
   return (
     <main className="main">
       <h1 className="heading">Rancid Tomatillos</h1>
-      {error && <h2 className="error">{error}</h2>}
       <Routes>
         <Route path="/" element={<Movies movies={movies} />}></Route>
         <Route path="/movie/:movieId" element={<SingleMovie />}></Route>
