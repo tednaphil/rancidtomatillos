@@ -21,7 +21,7 @@ function Home() {
   const { isPending, error, data } = useQuery({
     queryKey: ['repoData'],
     queryFn: () =>
-      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movie').then((res) =>
+      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies').then((res) =>
         res.json().then((info) => organizeMovieData(info)),
       ),
   });
