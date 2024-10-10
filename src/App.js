@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import Movies from "./Movies";
 import SingleMovie from "./SingleMovie";
 import { Routes, Route } from "react-router-dom";
 import BadUrl from "./BadUrl";
-import { fetchMovies } from "./APICalls";
 import { QueryClient, QueryClientProvider, useQuery} from "react-query";
 
 const queryClient = new QueryClient();
